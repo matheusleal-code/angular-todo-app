@@ -1,11 +1,15 @@
 <div class="container">
-  <p>{{description}}</p>
+  <input type="number" class="hide" value={{id}}>
+  <input value={{description}} type="text" [disabled]="!isEditing">
   <div class="actions">
-    <div class="action">
-      <button><i class="material-icons">mode_edit</i></button>
+    <div *ngIf="!isEditing" class="action">
+      <button (click)="setIsEditing()"><i class="material-icons">mode_edit</i></button>
     </div>
-    <div class="action">
-      <button><i class="material-icons">delete</i></button>
+    <div *ngIf="!isEditing" class="action">
+      <button (click)="deleteTask(id)"><i class="material-icons">delete</i></button>
+    </div>
+    <div *ngIf="isEditing" class="action">
+      <button (click)="attTask(id, description)"><i class="material-icons">done</i></button>
     </div>
   </div>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { TodoService } from '../todo-list.service';
-import { Todo } from '../todos';
 
 @Component({
   selector: 'app-new-todo',
@@ -9,6 +8,7 @@ import { Todo } from '../todos';
   styleUrls: ['./new-todo.component.css']
 })
 export class NewTodoComponent implements OnInit {
+  private id:number;
 
   checkoutForm = this.formBuilder.group({
     description: '',
@@ -16,14 +16,14 @@ export class NewTodoComponent implements OnInit {
 
   constructor(
     private TodoService: TodoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) { }
 
 
   onSubmit(): void {
-    this.TodoService.addTask(this.checkoutForm.value);
+    this.id = this.TodoService.getTasks().length + 1;
+    this.TodoService.addTask({...this.checkoutForm.value, id: this.id});
     this.checkoutForm.reset();
-    console.log(this.TodoService.getItems());
   }
 
   ngOnInit(): void {

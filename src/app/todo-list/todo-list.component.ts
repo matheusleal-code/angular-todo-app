@@ -7,7 +7,7 @@ import { TodoService } from '../todo-list.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos = this.TodoService.getItems();
+  todos = this.TodoService.getTasks();
   constructor(
     private TodoService: TodoService,
   ) { }

@@ -6,18 +6,43 @@ import { Todo } from './todos';
   providedIn: 'root'
 })
 export class TodoService {
-  items: Todo[] = [];
+  todos: Todo[] = [];
 
   constructor(
     //private http: HttpClient
   ) {}
 
   addTask(Todo: Todo) {
-    this.items.push(Todo);
+    this.todos.push(Todo);
   }
 
-  getItems() {
-    return this.items;
+  getTasks() {
+    return this.todos;
+  }
+
+  deleteTask(id: number) {
+    const todoId = this.getItemByID(id);
+
+    for(var todo of todoId){
+      var index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
+    }
+  }
+
+  attTask(id: number, description: string){
+    const todoId = this.getItemByID(id);
+
+    for(var todo of todoId){
+      var index = this.todos.indexOf(todo);
+      this.todos[index].description = description;
+    }
+  }
+
+  private getItemByID(id: number){
+    var todoId = this.todos.filter(function(todo) {
+      return todo.id == id;
+    });
+    return todoId;
   }
 
   // clearCart() {
