@@ -1,11 +1,13 @@
 .container{
   background-color: #ffffff;
 
-  height: 100px;
   width: 600px;
+  height: 250px;
 
   margin: auto;
   margin-top: 2rem;
+
+  overflow-y:auto;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

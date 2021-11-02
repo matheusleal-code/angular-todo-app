@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { TodoService } from '../todo-list.service';
+import { Todo } from '../todos';
 
 @Component({
   selector: 'app-new-todo',
@@ -13,12 +15,15 @@ export class NewTodoComponent implements OnInit {
   });
 
   constructor(
+    private TodoService: TodoService,
     private formBuilder: FormBuilder
   ) { }
 
+
   onSubmit(): void {
-    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.TodoService.addTask(this.checkoutForm.value);
     this.checkoutForm.reset();
+    console.log(this.TodoService.getItems());
   }
 
   ngOnInit(): void {

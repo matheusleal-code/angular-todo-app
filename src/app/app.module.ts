@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @NgModule({
 
@@ -14,7 +15,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   declarations: [
     AppComponent,
     NewTodoComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoItemComponent
   ],
 
   // Imports e Roteamento
