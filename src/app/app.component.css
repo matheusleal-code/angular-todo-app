@@ -1,0 +1,21 @@
+.container{
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container .box{
+  height: 90%;
+  width: 95%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box .header{
+  background-color: #2fa0eb;
+  height: 150px;
+}
+

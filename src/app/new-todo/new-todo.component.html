@@ -1,0 +1,13 @@
+<div class="top-container">
+  <div class="box">
+    <p>New Todo</p>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form-container">
+      <div>
+        <label for="description">
+        </label>
+        <input id="description" type="text" formControlName="description">
+      </div>
+      <button class="button" type="submit">Add</button>
+    </form>
+  </div>
+</div>
