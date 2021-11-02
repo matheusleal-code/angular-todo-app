@@ -1,0 +1,11 @@
+.container{
+  background-color: #ffffff;
+
+  height: 100px;
+  width: 600px;
+
+  margin: auto;
+  margin-top: 2rem;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
