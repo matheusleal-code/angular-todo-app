@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.input-box{
+  width: 100%;
+}
+
 .container .actions{
   display: flex;
   justify-content: space-between;
@@ -46,4 +50,19 @@ input{
   background-color: transparent;
 
   border: 0.2rem solid #d0d3d0;
+}
+
+.markAsDone{
+  position: relative;
+}
+
+.markAsDone::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: 2px;
+  border-bottom: 1px solid #111;
+  width: 100%;
 }

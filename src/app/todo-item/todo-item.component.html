@@ -1,15 +1,20 @@
 <div class="container">
+  <div *ngIf="!isEditing" class="action">
+    <button (click)="attTask(id, description, !status)"><i class="material-icons">{{!status ? 'done' : 'cancel'}}</i></button>
+  </div>
   <input type="number" class="hide" value={{id}}>
-  <input value={{description}} type="text" [disabled]="!isEditing">
+  <div class="input-box" [ngClass]="{'markAsDone':status}">
+    <input value={{description}} type="text" [disabled]="!isEditing">
+  </div>
   <div class="actions">
-    <div *ngIf="!isEditing" class="action">
+    <div *ngIf="!isEditing && !status" class="action">
       <button (click)="setIsEditing()"><i class="material-icons">mode_edit</i></button>
     </div>
     <div *ngIf="!isEditing" class="action">
       <button (click)="deleteTask(id)"><i class="material-icons">delete</i></button>
     </div>
     <div *ngIf="isEditing" class="action">
-      <button (click)="attTask(id, description)"><i class="material-icons">done</i></button>
+      <button (click)="attTask(id, description, status)"><i class="material-icons">done</i></button>
     </div>
   </div>
 </div>

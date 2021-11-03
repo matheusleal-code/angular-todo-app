@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { TodoService } from '../todo-list.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { TodoService } from '../todo-list.service';
 export class TodoItemComponent implements OnInit {
   @Input() id: number;
   @Input() description: string;
+  @Input() status: boolean;
 
   isEditing: boolean = false
 
   constructor(
-    private TodoService: TodoService
+    private TodoService: TodoService,
+    private FormBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -24,10 +27,8 @@ export class TodoItemComponent implements OnInit {
     this.isEditing = !this.isEditing;
   }
 
-  attTask(id: number, description: string){
-    console.log(id);
-    console.log(description);
-    this.TodoService.attTask(id, description);
+  attTask(id: number, description:string, status: boolean){
+    this.TodoService.attTask(id, description, status);
     this.isEditing = false;
   }
 

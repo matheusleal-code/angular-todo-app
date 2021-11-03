@@ -2,7 +2,7 @@
   <div class="container">
     <div *ngFor="let todo of todos">
       <h3>
-        <app-todo-item [id]="todo.id" [description]="todo.description"></app-todo-item>
+        <app-todo-item [id]="todo.id" [description]="todo.description" [status]="todo.status"></app-todo-item>
       </h3>
     </div>
   </div>

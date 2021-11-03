@@ -29,12 +29,13 @@ export class TodoService {
     }
   }
 
-  attTask(id: number, description: string){
+  attTask(id: number, description: string, status: boolean){
     const todoId = this.getItemByID(id);
 
     for(var todo of todoId){
       var index = this.todos.indexOf(todo);
       this.todos[index].description = description;
+      this.todos[index].status = status;
     }
   }
 
