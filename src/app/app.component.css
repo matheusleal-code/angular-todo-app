@@ -19,3 +19,15 @@
   height: 150px;
 }
 
+@media (max-width: 700px)
+{
+  .container .box{
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .box .header{
+    display: none;
+  }
+}
