@@ -48,19 +48,26 @@
   padding: 1rem;
 }
 
-.form-container .action button{
+.form-container .action{
   height: 100%;
   width: 80px;
 
   margin-left: 0.6rem;
-  padding: 0.2rem;
+}
 
+.action button{
+  width: 100%;
+  height: 100%;
   border: none;
 
   background-color: rgb(25, 87, 201);
   color: white;
 
   font-size: 1rem;
+}
+
+.action button:hover{
+  background-color: rgb(22, 77, 179);
 }
 
 @media (max-width: 700px)
